@@ -1,8 +1,8 @@
 <script>
   const map = new Map([
-    ['#acerca', 'Acerca'],
-    ['#aplicaciones', 'Aplicaciones'],
-    ['#contacto', 'Contacto'],
+    ['/#acerca', 'Acerca'],
+    ['/#aplicaciones', 'Aplicaciones'],
+    ['/#contacto', 'Contacto'],
     ['/blog', 'Blog']
   ])
 

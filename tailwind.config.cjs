@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./src/**/*.{astro,svelte}'],
   theme: {
     extend: {
@@ -21,5 +21,5 @@ export default {
       }
     ]
   },
-  plugins: [require('daisyui')]
+  plugins: [require('daisyui'), require('@tailwindcss/typography')]
 }

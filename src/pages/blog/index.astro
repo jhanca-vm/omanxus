@@ -1,0 +1,49 @@
+---
+import { Image, getImage } from 'astro:assets'
+import { getCollection } from 'astro:content'
+import bgHero from '@/assets/bg-blog-hero.webp'
+import Layout from '@/layouts/Layout.astro'
+
+const background = await getImage({ src: bgHero })
+const posts = await getCollection('blog')
+
+posts.reverse()
+---
+
+<Layout title="Blog - Omanxus" description="Artículos acerca de Omanxus">
+  <section class="hero min-h-[40svh]">
+    <span class="hero-overlay bg-opacity-40"></span>
+    <h1 class="mb-20 mt-12 text-4xl font-black text-white">Blog</h1>
+  </section>
+  <section
+    class:list={[
+      'container mb-24 mt-16 grid gap-y-12 sm:grid-cols-2 sm:gap-x-9',
+      'sm:gap-y-10 lg:grid-cols-3'
+    ]}
+  >
+    {
+      posts.map(({ slug, data }) => (
+        <a href={`/blog/${slug}`} title={data.title}>
+          <article
+            class:list={[
+              'card bg-accent/60 shadow-xl hover:bg-primary/90 hover:text-white'
+            ]}
+          >
+            <div class="card-body">
+              <h2 class="card-title line-clamp-2">{data.title}</h2>
+            </div>
+            <figure>
+              <Image src={data.cover} alt="" />
+            </figure>
+          </article>
+        </a>
+      ))
+    }
+  </section>
+</Layout>
+
+<style define:vars={{ 'bg-image': `url(${background.src})` }}>
+  .hero {
+    background-image: var(--bg-image);
+  }
+</style>
