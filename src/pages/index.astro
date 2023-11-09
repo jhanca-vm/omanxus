@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Applications from '../components/Applications.astro'
+import About from '../components/About.astro'
+import Details from '../components/Details.astro'
+import Contact from '../components/Contact.svelte'
+---
+
+<Layout title="Omanxus" description="Por tierra, mar y aire">
+  <Hero />
+  <Applications />
+  <About />
+  <Details />
+  <Contact client:visible />
+</Layout>

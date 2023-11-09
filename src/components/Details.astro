@@ -1,0 +1,81 @@
+---
+import SVG from './SVG.astro'
+---
+
+<section class="container mb-24 md:mb-36">
+  <h3 class="mx-auto w-fit text-center">
+    <span class="font-semibold">Investigador Principal</span>
+    <a
+      class="link-hover flex gap-x-1 text-lg font-bold text-neutral"
+      href="https://es.linkedin.com/in/xulio-cesar-gonzalez-alvarez-45a6b1ab"
+    >
+      <SVG class="w-6">
+        <path
+          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+        ></path>
+        <path d="M8 11l0 5"></path>
+        <path d="M8 8l0 .01"></path>
+        <path d="M12 16l0 -5"></path>
+        <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+      </SVG>
+       Xulio César González
+    </a>
+  </h3>
+  <div
+    class:list={[
+      'stats stats-vertical my-4 grid bg-primary/5 shadow-md sm:mx-auto',
+      'md:stats-horizontal sm:w-fit'
+    ]}
+  >
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <SVG class="w-10">
+          <path d="M3 21h18"></path>
+          <path d="M5 21v-12l5 4v-4l5 4h4"></path>
+          <path
+            d="M19 21v-8l-1.436 -9.574a.5 .5 0 0 0 -.495 -.426h-1.145a.5 .5 0 0 0 -.494 .418l-1.43 8.582"
+          ></path>
+          <path d="M9 17h1"></path>
+          <path d="M14 17h1"></path>
+        </SVG>
+      </div>
+      <span class="stat-value">80</span>
+      <span class="stat-title">Proyectos Completados</span>
+    </div>
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <SVG class="w-10">
+          <path d="M12 4v3m-4 -3v6m8 -6v6"></path>
+          <path
+            d="M12 18.5l-3 1.5l.5 -3.5l-2 -2l3 -.5l1.5 -3l1.5 3l3 .5l-2 2l.5 3.5z"
+          ></path>
+        </SVG>
+      </div>
+      <span class="stat-value">39</span>
+      <span class="stat-title">Patentes</span>
+    </div>
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <SVG class="w-10">
+          <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+          <path d="M6 21v-2a4 4 0 0 1 4 -4h.5"></path>
+          <path
+            d="M17.8 20.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1 .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428 .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z"
+          ></path>
+        </SVG>
+      </div>
+      <span class="stat-value">100</span>
+      <span class="stat-title">Clientes Satisfechos</span>
+    </div>
+  </div>
+  <div class="flex items-start justify-center gap-x-1.5">
+    <SVG class="mt-0.5 w-5">
+      <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"></path>
+      <path
+        d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"
+      ></path>
+      <path d="M9.7 17l4.6 0"></path>
+    </SVG>
+    <p>Investivación, Invención y Capacitación desde 1983</p>
+  </div>
+</section>

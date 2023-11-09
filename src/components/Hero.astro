@@ -1,0 +1,34 @@
+---
+import { getImage } from 'astro:assets'
+import bgHero from '../assets/bg-hero.webp'
+import SVG from './SVG.astro'
+
+const background = await getImage({ src: bgHero })
+---
+
+<section class="hero bg-fixed bg-top">
+  <div class="hero-content flex-col text-center text-white/90 sm:py-16">
+    <p
+      class:list={[
+        'mb-3 max-w-xl text-3xl font-medium leading-tight md:max-w-2xl',
+        'md:text-4xl md:font-bold md:leading-snug'
+      ]}
+    >
+      La reinvención de las tecnologías del conocimiento aplicada a los sectores
+      Tierra, Mar y Aire
+    </p>
+    <a class="animate-bounce" href="#aplicaciones">
+      <SVG class="w-8">
+        <path d="M7 7l5 5l5 -5"></path>
+        <path d="M7 13l5 5l5 -5"></path>
+      </SVG>
+    </a>
+  </div>
+</section>
+
+<style define:vars={{ 'bg-image': `url(${background.src})` }}>
+  section {
+    background-image: var(--bg-image);
+    min-height: calc(100svh - 6.75rem);
+  }
+</style>

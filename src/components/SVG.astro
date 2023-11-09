@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class:list={[className, 'fill-none stroke-current stroke-2']}
+  viewBox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <slot />
+</svg>

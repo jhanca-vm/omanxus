@@ -1,0 +1,11 @@
+{
+  "arrowParens": "avoid",
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-svelte",
+    "prettier-plugin-tailwindcss"
+  ],
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none"
+}

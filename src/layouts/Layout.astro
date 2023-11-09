@@ -1,0 +1,61 @@
+---
+import '@fontsource-variable/dm-sans'
+import { Image } from 'astro:assets'
+import logo from '../assets/logo.png'
+import Header from '../components/Header.svelte'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang="es" class="min-w-[375px] overflow-x-hidden scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <Header client:media="(max-width: 767px)">
+      <Image
+        class="w-36 md:w-44"
+        src={logo}
+        alt="Omanxus: tecnologías del conocimiento aplicado"
+      />
+    </Header>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .container {
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-inline: 2.5rem;
+    }
+  }
+</style>

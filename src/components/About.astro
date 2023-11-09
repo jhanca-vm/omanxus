@@ -1,0 +1,49 @@
+---
+import { getImage } from 'astro:assets'
+import src from '../assets/about.jpg'
+
+const aboutImage = await getImage({ src })
+---
+
+<section
+  id="acerca"
+  class:list={[
+    'container mb-14 mt-16 grid scroll-mt-12 gap-y-10 md:mb-24 md:mt-32',
+    'md:grid-cols-3 lg:grid-cols-2'
+  ]}
+>
+  <div class="text-lg md:col-span-2 md:mr-24 lg:col-span-1">
+    <h2
+      class:list={[
+        'border-l-4 border-primary pl-2 font-medium leading-none',
+        'text-neutral/60'
+      ]}
+    >
+      Acerca de nosotros
+    </h2>
+    <p class="mt-2 text-2xl text-neutral">
+      <strong>Aportamos valor a través de soluciones industriales</strong>
+    </p>
+    <p class="my-6">
+      Contamos con amplia experiencia en los Sectores Industriales más
+      competitivos.
+    </p>
+    <p class="mb-8">
+      Creamos proyectos llave en mano, llevando una idea desde la ingeniería,
+      hasta su puesta en marcha.
+    </p>
+    <a class="btn btn-primary btn-outline" href="#contacto">Conócenos</a>
+  </div>
+  <div class="flex min-h-[18rem] items-end bg-cover bg-center p-2.5">
+    <div class="stat w-fit border-r-4 border-primary bg-white text-center">
+      <span class="stat-value">80</span>
+      <span class="stat-desc text-primary">Casos de Éxito</span>
+    </div>
+  </div>
+</section>
+
+<style define:vars={{ 'bg-image': `url(${aboutImage.src})` }}>
+  section > div:last-child {
+    background-image: var(--bg-image);
+  }
+</style>
